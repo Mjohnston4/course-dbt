@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: postgres
+    description: A clone of a snowflake db
+    database: raw
+    schema: public
+    tables:
+      - name: addresses
+        description: the addresses of orders
+        columns:
+            - name: address_id
+              description: pk for address data
+            - name: address
+              description: The first few lines of the address
+            - name: zipcode
+              description: The zipcode of the address
+            - name: state
+              description: state this delivery address is based in
+            - name: country
+              description: country this delivery address is based in 
+
+      - name: users
+        description: people we ship to
+        columns:
+            - name: user_id
+              description: UUID for each unique user on platform
+            - name: first_name
+              description: first name of the user
+            - name: last_name
+              description: last name of the user
+            - name: email
+              description: email address of the user
+            - name: phone_number
+              description: phone number of the user
+            - name: created_at
+              description: timestamp the user was created
+            - name: updated_at
+              description: timestamp the user was last updated
+            - name: address_id
+              description: default delivery address for the user
+      - name: events
+        description: event details for orders and products
+      - name: order_items
+        description: product order details
+      - name: orders
+        description: order details
+      - name: products
+        description: product details on order items
+      - name: promos
+        description: promo details for orders
+      
