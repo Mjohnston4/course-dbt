@@ -5,7 +5,7 @@ with addresses as (
         zipcode,
         state,
         country
-    FROM raw.public.addresses
+    FROM {{source('postgres', 'addresses')}}
 )
 
 Select * from addresses

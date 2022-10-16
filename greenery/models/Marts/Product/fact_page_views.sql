@@ -8,7 +8,7 @@ with events as (
         product_id,
         session_id,
         user_id
-    FROM {{source('postgres', 'events')}}
+    FROM {{ref( 'stg_events')}}
 )
 
 Select * from events

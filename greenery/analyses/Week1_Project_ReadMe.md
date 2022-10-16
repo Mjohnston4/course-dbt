@@ -47,11 +47,11 @@ Order by count(order_id) Desc
 ```
 
 Q5. On average, how many unique sessions do we have per hour?
-A5. 61.3
+A5. 16.3
 
 ```sql
 with sessions_hour as(
-        Select count(session_id) Sessions_per_hour ,extract(day,created_at),extract(hour,created_at) 
+        Select count(distinct session_id) Sessions_per_hour ,extract(day,created_at),extract(hour,created_at) 
 from dev_db.dbt_mjohnst4.stg_events
 Group by extract(day,created_at),extract(hour,created_at)
 Order by extract(day,created_at),extract(hour,created_at)

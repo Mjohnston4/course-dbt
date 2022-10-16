@@ -4,7 +4,7 @@ with products as (
         name,
         price,
         product_id
-    FROM raw.public.products
+    FROM {{source('postgres', 'products')}}
 )
 
 Select * from products

@@ -3,7 +3,7 @@ with order_items as (
         order_id,
         product_id,
         quantity
-    FROM raw.public.order_items
+    FROM {{source('postgres', 'order_items')}}
 )
 
 Select * from order_items

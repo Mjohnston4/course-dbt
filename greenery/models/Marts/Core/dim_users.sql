@@ -1,4 +1,4 @@
-with users as (
+with dim_users as (
     SELECT
         address_id,
         created_at,
@@ -8,7 +8,7 @@ with users as (
         phone_number,
         updated_at,
         user_id
-    FROM {{source('postgres', 'users')}}
+    FROM {{ref('stg_users')}}
 )
 
-Select * from users
+Select * from dim_users

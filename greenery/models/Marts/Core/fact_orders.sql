@@ -1,4 +1,4 @@
-with orders as (
+with fact_orders as (
     SELECT
         address_id,
         created_at,
@@ -13,7 +13,7 @@ with orders as (
         status,
         tracking_id,
         user_id
-    FROM {{source('postgres', 'orders')}}
+    FROM {{ref('stg_orders')}}
 )
 
-Select * from orders
+Select * from fact_orders

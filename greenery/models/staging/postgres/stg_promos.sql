@@ -3,7 +3,7 @@ with promos as (
         discount,
         promo_id,
         status
-    FROM raw.public.promos
+    FROM {{source('postgres', 'promos')}}
 )
 
 Select * from promos
