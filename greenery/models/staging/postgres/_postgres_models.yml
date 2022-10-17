@@ -42,5 +42,21 @@ Models:
     description: order details
   - name: stg_products
     description: product details on order items
-  - name: stg_promos
-    description: promo details for orders
+  - name: int_product_sessions
+    description: aggregating pageviews per product
+  - name: int_sessions_events_agg
+    description: agreegate key 
+  - name: int_users_orders
+    description: counting event typer by user and session
+  - name: user_order_facts
+    description: aggregating various measures at the user level
+    columns:
+        - name: user_id
+        - description: unique user id
+          tests:
+            - unique
+            - not_null
+  - name: fct_page_views
+    description: count of pageview per product
+  - name: fct_user_session
+    description: sessoin stats for users and the types of events

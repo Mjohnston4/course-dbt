@@ -2,9 +2,9 @@ with users as (
     SELECT
         address_id,
         created_at,
-        email,
-        first_name,
-        last_name,
+        email as user_email,
+        first_name as user_first_name,
+        last_name as user_last_name,
         phone_number,
         updated_at,
         user_id

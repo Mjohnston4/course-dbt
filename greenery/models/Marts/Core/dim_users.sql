@@ -2,9 +2,9 @@ with dim_users as (
     SELECT
         address_id,
         created_at,
-        email,
-        first_name,
-        last_name,
+        user_email,
+        user_first_name,
+        user_last_name,
         phone_number,
         updated_at,
         user_id

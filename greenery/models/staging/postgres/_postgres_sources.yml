@@ -5,12 +5,16 @@ sources:
     description: A clone of a snowflake db
     database: raw
     schema: public
+    
+    
     tables:
       - name: addresses
         description: the addresses of orders
         columns:
             - name: address_id
               description: pk for address data
+              tests:
+                - unique
             - name: address
               description: The first few lines of the address
             - name: zipcode
@@ -25,6 +29,9 @@ sources:
         columns:
             - name: user_id
               description: UUID for each unique user on platform
+              tests:
+                - unique
+                - not_null
             - name: first_name
               description: first name of the user
             - name: last_name
@@ -41,12 +48,37 @@ sources:
               description: default delivery address for the user
       - name: events
         description: event details for orders and products
+        columns:
+            - name: event_id
+              description: UUID for each unique event on platform
+              tests:
+                - unique
+                - not_null
       - name: order_items
         description: product order details
       - name: orders
         description: order details
+        loaded_at_field: created_at
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 100, period: hour}
+        columns:
+            - name: order_id
+              tests:
+                - unique
+                - not_null
       - name: products
         description: product details on order items
+        columns:
+            - name: product_id
+              tests:
+                - unique
+                - not_null
       - name: promos
         description: promo details for orders
+        columns:
+            - name: promo_id
+              tests:
+                - unique
+                - not_null
       
