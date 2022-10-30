@@ -1,6 +1,6 @@
 version: 2
 
-Models:
+models:
   - name: stg_addresses
     description: the addresses of orders
     columns:
@@ -52,11 +52,9 @@ Models:
     description: aggregating various measures at the user level
     columns:
         - name: user_id
-        - description: unique user id
+          description: unique user id
           tests:
             - unique
             - not_null
-  - name: fct_page_views
-    description: count of pageview per product
   - name: fct_user_session
     description: sessoin stats for users and the types of events

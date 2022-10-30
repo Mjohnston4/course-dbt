@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with dim_products as (
     SELECT
         inventory,

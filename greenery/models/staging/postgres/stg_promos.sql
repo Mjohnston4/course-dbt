@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+
 with promos as (
     SELECT
         discount,

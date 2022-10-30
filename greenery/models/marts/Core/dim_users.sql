@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with dim_users as (
     SELECT
         address_id,

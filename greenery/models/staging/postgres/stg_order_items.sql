@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with order_items as (
     SELECT
         order_id,

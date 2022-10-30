@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
 with cte_user_order as (
     SELECT
         u.user_id,

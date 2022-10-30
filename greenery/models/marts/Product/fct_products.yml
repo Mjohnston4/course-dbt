@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_products
+    description: "aggregating various measures at the product level"
+    columns:
+        - name: product_id
+          description: "unique product id"
+          tests:
+            - unique

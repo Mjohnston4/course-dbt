@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+
 with addresses as (
     SELECT
         address_id,

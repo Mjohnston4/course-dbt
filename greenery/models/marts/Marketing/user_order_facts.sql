@@ -1,3 +1,10 @@
+{{
+  config(
+    materialized='view'
+  )
+}}
+
+
 with users_orders_facts as (
     SELECT
     user_id,
